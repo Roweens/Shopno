@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/* Подключаем шрифты */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;700&family=Raleway:wght@400;500&display=swap");
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -7,9 +10,6 @@
   .container {
     max-width: 960px;
   }
-  .hero__title p {
-    font-size: 40px;
-  }
   .hero {
     margin-top: 220px;
   }
@@ -18,9 +18,6 @@
 @media (max-width: 991px) {
   .container {
     max-width: 750px;
-  }
-  .hero__title p {
-    font-size: 35px;
   }
   .menu a {
     font-size: 16px;
@@ -71,6 +68,35 @@
   .item-about__text:last-child {
     margin-bottom: 40px;
   }
+  .reviews__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .reviews__body {
+    margin-top: 100px;
+  }
+  .contacts__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contacts__form {
+    margin-right: 0;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+  .contacts__info {
+    margin-top: 30px;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -91,20 +117,10 @@
   .menu.active {
     top: 90px;
   }
-  .hero__title p {
-    font-size: 28px;
-    letter-spacing: 2.2px;
-  }
   .hero__button {
     font-size: 14px;
     padding: 14px 38px;
     margin: 115px 0 200px 0;
-  }
-  .title {
-    font-size: 33px;
-  }
-  .text {
-    font-size: 15px;
   }
   .works__row {
     -webkit-box-pack: center;
@@ -136,13 +152,105 @@
   .services {
     padding-top: 90px;
   }
+  .team {
+    padding: 90px 0 120px 0;
+  }
+  .team__header {
+    margin-bottom: 90px;
+  }
+  .reviews {
+    padding: 90px 0 141px 0;
+  }
+  .reviews__photo {
+    margin-top: 90px;
+  }
+  .team__row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .logos {
+    display: none;
+  }
+  .contacts__spoiler {
+    display: block;
+    border: 3px solid #eaebed;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.9;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2.28px;
+    padding: 20px 0 20px 20px;
+    background-color: #f9fbfb;
+    border-radius: 5px;
+    margin-bottom: 6px;
+  }
+  .contacts__spoiler:before, .contacts__spoiler:after {
+    content: "";
+    width: 14px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .contacts__spoiler:before {
+    -webkit-transform: rotate(-40deg);
+        -ms-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+    right: 24px;
+  }
+  .contacts__spoiler:after {
+    -webkit-transform: rotate(40deg);
+        -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+    right: 32px;
+  }
+  .contacts__spoiler.active {
+    margin-bottom: 0px;
+  }
+  .contacts__spoiler.active:before, .contacts__spoiler.active:after {
+    background-color: #b4b5b6;
+  }
+  .contacts__spoiler.active:before {
+    -webkit-transform: rotate(40deg);
+        -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  .contacts__spoiler.active:after {
+    -webkit-transform: rotate(-40deg);
+        -ms-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+  }
+  .contacts__info {
+    display: none;
+    margin-top: 0;
+  }
+  .contacts__map {
+    margin: 30px 0 0 0;
+  }
+  .contacts__form {
+    display: none;
+    margin-bottom: 6px;
+  }
+  .contacts {
+    background-image: none;
+    background-color: #b2f2ee;
+    padding: 50px 0 50px 0;
+  }
+  .reviews {
+    padding: 120px 0 90px 0;
+  }
 }
 
 @media (max-width: 664px) {
-  .hero__title p {
-    font-size: 24px;
-    letter-spacing: 2.2px;
-  }
   .menu__nav {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -171,13 +279,18 @@
   .header {
     width: 100%;
   }
+  .reviews__buttons {
+    margin: 22px 0 0 0;
+  }
+  .reviews__buttons-left {
+    margin-right: 15px;
+  }
+  .reviews__buttons-left i, .reviews__buttons-right i {
+    margin: 10px 15px 10px 15px;
+  }
 }
 
 @media (max-width: 584px) {
-  .hero__title p {
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
   .logo__text {
     font-size: 15px;
     line-height: 10px;
@@ -189,28 +302,23 @@
     padding: 12px 34px;
     margin: 100px 0 200px 0;
   }
-  .item-about__text {
-    text-align: center;
-  }
 }
 
 @media (max-width: 495px) {
-  .item-about__text {
-    font-size: 13px;
-    line-height: 20px;
-  }
   .item-about__text span {
     display: none;
-  }
-  .item-about__title {
-    font-size: 17px;
-    line-height: 20px;
   }
 }
 
 @media (max-width: 440px) {
   .item-services:first-child, .item-services:nth-child(2), .item-services:nth-child(3), .item-services:nth-child(4), .item-services:nth-child(5), .item-services:nth-child(6) {
-    padding-right: 90px;
+    padding-right: 80px;
+  }
+  .team__quote {
+    display: none;
+  }
+  .item-team {
+    margin-bottom: 14px;
   }
 }
 
@@ -219,10 +327,7 @@
     padding-top: 90px;
   }
   .item-services:first-child {
-    padding-right: 40px;
-  }
-  .item-services:first-child .item-services__text {
-    font-size: 14px;
+    padding-right: 25px;
   }
 }
 
@@ -234,11 +339,26 @@
   .item-services:first-child, .item-services:nth-child(2), .item-services:nth-child(3), .item-services:nth-child(4), .item-services:nth-child(5), .item-services:nth-child(6) {
     padding-right: 75px;
   }
+  .reviews__quote {
+    padding: 70px 45px 0px 45px;
+  }
 }
 
 @media (max-width: 328px) {
   .menu a {
     font-size: 16px;
     margin-bottom: 25px;
+  }
+}
+
+@media (max-height: 650px) {
+  .header {
+    height: 100%;
+  }
+  .hero {
+    margin-top: 140px;
+  }
+  .hero__button {
+    margin: 80px 0 120px 0;
   }
 }

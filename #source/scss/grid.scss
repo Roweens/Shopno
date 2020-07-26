@@ -1,3 +1,6 @@
+/* Подключаем шрифты */
+@import "fonts.scss";
+
 .container {
 	max-width: 1140px;
 	margin: 0 auto;
@@ -7,11 +10,7 @@
 	.container {
 		max-width: 960px;
 	}
-	.hero__title {
-		p {
-			font-size: 40px;
-		}
-	}
+
 	.hero {
 		margin-top: 220px;
 	}
@@ -21,11 +20,7 @@
 	.container {
 		max-width: 750px;
 	}
-	.hero__title {
-		p {
-			font-size: 35px;
-		}
-	}
+
 	.menu {
 		a {
 			font-size: 16px;
@@ -74,6 +69,26 @@
 			margin-bottom: 40px;
 		}
 	}
+	.reviews__row {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.reviews__body {
+		margin-top: 100px;
+	}
+
+	.contacts__row {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.contacts__form {
+		margin-right: 0;
+		flex-basis: auto;
+	}
+	.contacts__info {
+		margin-top: 30px;
+		flex-basis: auto;
+	}
 }
 
 @media (max-width: 768px) {
@@ -102,25 +117,10 @@
 		top: 90px;
 	}
 
-	.hero__title {
-		p {
-			font-size: 28px;
-			letter-spacing: 2.2px;
-		}
-	}
-
 	.hero__button {
 		font-size: 14px;
 		padding: 14px 38px;
 		margin: 115px 0 200px 0;
-	}
-
-	.title {
-		font-size: 33px;
-	}
-
-	.text {
-		font-size: 15px;
 	}
 
 	.works__row {
@@ -156,15 +156,100 @@
 	.services {
 		padding-top: 90px;
 	}
+
+	.team {
+		padding: 90px 0 120px 0;
+		&__header {
+			margin-bottom: 90px;
+		}
+	}
+	.reviews {
+		padding: 90px 0 141px 0;
+		&__photo {
+			margin-top: 90px;
+		}
+	}
+	.team__row {
+		justify-content: center;
+	}
+	.logos {
+		display: none;
+	}
+
+	.contacts__spoiler {
+		display: block;
+		border: 3px solid #eaebed;
+		position: relative;
+		cursor: pointer;
+		opacity: 0.9;
+		color: #000000;
+		@include montserrat;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 28px;
+		text-transform: uppercase;
+		letter-spacing: 2.28px;
+		padding: 20px 0 20px 20px;
+		background-color: #f9fbfb;
+		border-radius: 5px;
+		margin-bottom: 6px;
+
+		&:before,
+		&:after {
+			content: "";
+			width: 14px;
+			height: 3px;
+			background-color: black;
+			position: absolute;
+			top: 50%;
+			transition: all 0.3s ease 0s;
+		}
+		&:before {
+			transform: rotate(-40deg);
+			right: 24px;
+		}
+		&:after {
+			transform: rotate(40deg);
+			right: 32px;
+		}
+	}
+
+	.contacts__spoiler.active {
+		margin-bottom: 0px;
+		&:before,
+		&:after {
+			background-color: #b4b5b6;
+		}
+		&:before {
+			transform: rotate(40deg);
+		}
+		&:after {
+			transform: rotate(-40deg);
+		}
+	}
+
+	.contacts__info {
+		display: none;
+		margin-top: 0;
+	}
+	.contacts__map {
+		margin: 30px 0 0 0;
+	}
+	.contacts__form {
+		display: none;
+		margin-bottom: 6px;
+	}
+	.contacts {
+		background-image: none;
+		background-color: #b2f2ee;
+		padding: 50px 0 50px 0;
+	}
+	.reviews {
+		padding: 120px 0 90px 0;
+	}
 }
 
 @media (max-width: 664px) {
-	.hero__title {
-		p {
-			font-size: 24px;
-			letter-spacing: 2.2px;
-		}
-	}
 	.menu {
 		&__nav {
 			flex-direction: column;
@@ -194,16 +279,23 @@
 	.header {
 		width: 100%;
 	}
+	.reviews {
+		&__buttons {
+			margin: 22px 0 0 0;
+		}
+		&__buttons-left {
+			margin-right: 15px;
+		}
+		&__buttons-left,
+		&__buttons-right {
+			i {
+				margin: 10px 15px 10px 15px;
+			}
+		}
+	}
 }
 
 @media (max-width: 584px) {
-	.hero__title {
-		p {
-			font-size: 20px;
-			letter-spacing: 2px;
-		}
-	}
-
 	.logo {
 		&__text {
 			font-size: 15px;
@@ -220,21 +312,14 @@
 	}
 
 	.item-about__text {
-		text-align: center;
 	}
 }
 
 @media (max-width: 495px) {
 	.item-about__text {
-		font-size: 13px;
-		line-height: 20px;
 		span {
 			display: none;
 		}
-	}
-	.item-about__title {
-		font-size: 17px;
-		line-height: 20px;
 	}
 }
 
@@ -246,8 +331,15 @@
 		&:nth-child(4),
 		&:nth-child(5),
 		&:nth-child(6) {
-			padding-right: 90px;
+			padding-right: 80px;
 		}
+	}
+
+	.team__quote {
+		display: none;
+	}
+	.item-team {
+		margin-bottom: 14px;
 	}
 }
 
@@ -261,10 +353,7 @@
 			padding-top: 90px;
 		}
 		&:first-child {
-			padding-right: 40px;
-			.item-services__text {
-				font-size: 14px;
-			}
+			padding-right: 25px;
 		}
 	}
 }
@@ -287,6 +376,10 @@
 			padding-right: 75px;
 		}
 	}
+
+	.reviews__quote {
+		padding: 70px 45px 0px 45px;
+	}
 }
 
 @media (max-width: 328px) {
@@ -295,5 +388,17 @@
 			font-size: 16px;
 			margin-bottom: 25px;
 		}
+	}
+}
+
+@media (max-height: 650px) {
+	.header {
+		height: 100%;
+	}
+	.hero {
+		margin-top: 140px;
+	}
+	.hero__button {
+		margin: 80px 0 120px 0;
 	}
 }
